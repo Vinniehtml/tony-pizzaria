@@ -1,190 +1,229 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul,
-ol,
-li {
-    list-style: none;
-}
-
-:root {
-    --primary-color: #F07807;
-    --secundary-color: #FBDDC1;
-    --default-shadow: 0 4px 6px #0004;
-    --defalut-padding: 0 80px
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: var(--secundary-color);
-}
-
-header {
-    height: 60px;
-    width: 100%;
-    position: fixed;
-    top: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--defalut-padding);
-}
-
-header menu {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-}
-
-header li {
-    padding: 4px 8px;
-    transition: 0.5s;
-}
-
-header li:hover {
-    background-color: var(--secundary-color);
-    box-shadow: var(--default-shadow);
-}
-
-header button {
-    height: 48px;
-    width: 120px;
-    background-color: var(--secundary-color);
-    border: none;
-    border-radius: 12px;
-    box-shadow: var(--default-shadow);
-}
-
-section {
-    height: 100vh;
-}
-
-.home {
-    background-image: url(./img/bg-home.svg);
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: contain;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-}
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 64px;
-}
-
-.hero h2 {
-    width: 558px;
-    font-size: 4rem;
-    font-weight: 400;
-    margin-bottom: 64px;
-}
-
 .hero span {
     color: var(--primary-color);
-}
-
-.container-pizza {
+  }
+  
+  .container-pizza {
+  }
+  
+  .container-produtos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--defalut-padding);
-}
-
-.pizza {
-    background-color: yellow;
-    display: flex;
-    border-radius: 12px;
+  }
+  
+  .produto {
     position: relative;
-}
-
-.adicionar {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: var(--primary-color);
-    border: 4px solid white;
-    border-radius: 13px;
-    display: grid;
-    place-content: center;
-    font-size: 32px;
-    color: #fafafa;
-    top: -18%;
-    right: -20px;
-    opacity: 0;
-    transition: .5s;
-}
-
-.pizza:hover .adicionar {
-    opacity: 1;
-}
-
-.container-info {
-    position: absolute;
-    width: 100%;
-    height: 36px;
-    background-color: #0008;
     display: flex;
-    padding: 0 12px;
+    border-radius: 12px;
+    background-color: #F07807;
+  }
+  
+  .adicionar {
+    position: absolute;
+    transition: 0.5s;
+  }
+  
+  .produto:hover .adicionar {
+    opacity: 1;
+  }
+  
+  .animacao {
     border-radius: 0 0 12px 12px;
+    transition: 0.5s;
+  }
+  
+  .produto:hover .container-info {
+    bottom: 0;
+  }
+  
+  .cardapio {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .titulo-secao {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .titulo-secao h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .cardapio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 260px;
+    border-bottom: 2px solid var(--secundary-color);
+  }
+  
+  .cabecalho-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-color);
+  }
+  
+  .cabecalho-item h4,
+  .cabecalho-item a {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .cardapio-item.bebidas {
+    border: none;
+  }
+  
+  .cardapio-item.bebidas .produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    padding: 16px;
+    transition: 0.5s;
+  }
+  
+  .cardapio-item.bebidas .produto:hover {
+    box-shadow: 2px 2px 8px #bbb;
+  }
+  
+  .cardapio-item.bebidas .valor {
+    font-size: 1rem;
+    color: var(--primary-color);
+    width: 100%;
+  }
+  
+  .cardapio-item.bebidas .descricao {
+    font-size: 0.5rem;
+    width: 100%;
+  }
+  
+  .servicos {
+    height: auto;
+    background-color: var(--secundary-color);
+    padding-block: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.servico-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.servico-card{
+    height: 500px;
+    width: 400px;
+    border: 4px solid var(--primary-color);
+    border-radius: 24px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.servico-card img{
+    /* CRTL + / para adicionar comentario */
+    /* cria sombras em areas visiveis*/
+    filter: drop-shadow(var(--default-shadow));
+}
+
+.servico-card h4{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    text-shadow: var(--default-shadow);
+}
+
+.servico-card p{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 300;
+    text-shadow: var(--default-shadow);
+}
+
+footer{
+    height: 525px;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    bottom: -36px;
-    transition: .5s;
-}
-
-.pizza:hover .container-info {
-    bottom: 0;
-}
-
-.animacao {
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.container-info p {
-    width: 120px;
-    font-size: 12px;
-    color: #ffffff;
-    font-weight: 300;
-}
-
-.container-info span {
-    display: grid;
-    place-content: center;
-    width: 57px;
-    height: 20px;
-    font-size: 12px;
-    background-color: var(--primary-color);
-    font-size: 12px;
-    border-radius: 4px;
     color: white;
 }
 
-.cardapio {
-    background-color: lightgreen;
+.contatos-container{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    width: 75%;
 }
 
-.servicos {
-    background-color: lightpink;
+.contato-item{
+    display: flex;
+    flex-direction: column;
+    padding-top: 127px;
+    gap: 17px;
 }
 
-footer {
-    height: 525px;
-    background-color: tomato;
+.contato-item.logo{
+    justify-content: center;
+    padding-top: 0;
 }
+
+.contato-item h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.contato-item menu{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 300;
+}
+
+.contato-item li{
+    display: flex;
+    gap: 16px;
+    width: 200px;
+}
+
+.social a{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    transition: .5s;
+}
+
+.social a:hover{
+    background-color: var(--secundary-color);
+    color: var(--primary-color);
+}
+
+.copyright{
+    height: 72px;
+    text-align: center;
+    /* usando o grid para centralizar o texto, é mais facil quando é apenas um elemento*/
+    display: grid;
+    place-content: center;
+
+    border-top: 1px solid var(--secundary-color);
+    font-size: 0.7rem;
+    font-weight: 300;
+    font-style: italic;
+    width: 100%;
+}
+  
